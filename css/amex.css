@@ -1,0 +1,657 @@
+body{
+	background-color: #f7f8f9;
+	-webkit-print-color-adjust: exact;
+}
+.app-header{
+	height: 80px;
+}
+.app-footer{
+	height: 80px;
+}
+
+.app-body{
+	max-width: 940px;
+	min-width : 640px;
+	margin: 0px auto;
+}
+
+
+.login-layout{
+	max-width: 940px;
+	min-width : 640px;
+	margin: 0px auto;
+	padding: 10px 20px;
+	border: 1px solid #CCCCCC;
+	background-color: white;
+}
+
+.amex_default{
+	
+    font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    color: #333333;
+   /*  text-align: center; */
+    line-height: normal;
+    
+}
+
+.heading{
+	font-size: 32px;
+}
+.label{
+	font-size: 18px;
+}
+.langselectbox{
+	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+	width: 380px;
+	padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+}
+.langContainer.md-input-has-value.md-input-focused md-select ._md-select-value, 
+.langContainer.md-input-has-value.md-input-focused md-select.md-default-theme ._md-select-value,
+md-select.md-default-theme ._md-select-value, md-select ._md-select-value
+/*, .login-layout .langselectbox.ng-pristine.ng-valid.ng-empty.ng-touched */{
+	border-bottom-color: #FFF; 
+}
+
+.login-layout md-select.md-default-theme:not([disabled]):focus ._md-select-value, .login-layout md-select:not([disabled]):focus ._md-select-value{
+	border-bottom-color: #FFF; 
+}
+
+.login-layout button, .login-layout select, .login-layout html, .login-layout textarea, .login-layout input {
+    font-family: 'BentonSans-Bk';
+    font-size: 16px;
+    font-weight: 300;
+    color: #333333;
+    font-style: normal;
+}
+.buttonSelction{
+	clear: both;
+	height: 41px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.buttonSelction .btn{
+	float: left;
+	margin-left: 20px;
+}
+
+.btn{
+    width: 200px;
+    background: inherit;
+    border: none;
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #FFF;
+    padding:12px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+}
+.save_btn{
+	 background-color: #1274b8;
+}
+.cancel_btn{
+	background-color: #FCFDFE;
+	width : 80px;
+	color : #1274B8;
+	border: 1px solid #1274B8;
+}
+.save_btn:HOVER {
+	background-color: #0c5a9d;
+}
+.left{ float: left;}
+.right{ float: right;}
+.width20{width: 40%;}
+.width80{width: 62%;}
+/* .steps {
+	height: 41px;
+	border: 1px solid #676A99;
+} */
+.steps_panel{
+	padding: 10px 20px;
+	margin: 0px auto;
+}
+.circle{
+    width:40px;
+    height:40px;
+    border-radius:25px;
+    font-weight:300;
+    color:#676A99;
+    line-height:40px;
+    text-align:center;
+    border: 2px solid #676A99;
+    background-color: #FFF;
+    
+    font-family: 'BentonSans-Md';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+   
+ }
+ .blue_bg{
+ 	background:#676A99;
+ 	color : #FFF;
+ }
+ .line{
+ 	width: 120px;
+ 	padding: 20px 0;
+ }
+ .line div{
+ 	border: 2px solid #C1C2D5;
+ }
+ 
+ .line div.complted{
+ 	border: 2px solid #676A99;
+ }
+ .step_info{
+ 	color: #676A99;
+ 	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-left: -30px;
+    margin-top : 15px;
+    width: 100px;
+ }
+ .step_activ{
+ 	font-family: 'BentonSans-Md';
+ }
+ 
+ .progress_section{
+ 	height: 120px;
+ 	width: 500px;
+ 	margin: 0px auto;
+ }
+ 
+ .width60{
+ 	width: 50%;
+ }
+ .width40{
+ 	width: 50%
+ }
+ .amex_input_box{
+ 	width: 400px;
+ 	border: 1px solid #CCC;
+    border-radius: 6px;
+    margin-top: 15px;
+ }
+ .amex_input_box .md-input{
+ 	border-bottom: none; 
+ 	width: 95%;
+ }
+ .amex_input_field{
+ 	width: 100%;
+ 	margin-bottom: 0px;
+ 	margin-left: 10px;
+ }
+ .amex_input_box .md-errors-spacer{
+ 	float: none;
+ }
+ .password_label{
+ 	margin-top: 60px;
+ }
+ .users_section{
+ 	clear: both;
+ 	/* height: 320px; */
+ }
+ .user_info_sec p{
+ 	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10px;
+  
+ }
+ 
+ md-tooltip.customTooltip ._md-content, md-tooltip.customTooltip .md-content{
+ 	height: 65px;
+ 	line-height: 14px;
+ 	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10px;
+    padding: 10px;
+    color : #110808;
+    position: relative;
+    
+ }
+ 
+ md-tooltip.customTooltip{
+ 	padding-left: 1em;
+ }
+ 
+ /* md-tooltip{
+ 	box-shadow :3px 3px 2px #888888
+ } */
+ md-tooltip.md-default-theme.customTooltip ._md-content, md-tooltip ._md-content, 
+ md-tooltip.md-default-theme.customTooltip .md-content, md-tooltip .md-content{
+ 	background-color: #F7F8F9;
+    border: 1px solid #999999;
+	border-radius: 4px;
+	box-shadow: 1px 0px 0px #CCCCCC;
+	box-sizing: border-box;
+ }
+ 
+ md-tooltip.customTooltip.passwordTooltip ._md-content,
+ md-tooltip.customTooltip.passwordTooltip .md-content{
+ 	height: 85px;
+ }
+ 
+ 
+ md-tooltip.customTooltip:before{
+	
+	/* position: absolute;
+	display: inline-block;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #999999;
+	border-bottom: 10px solid transparent;
+	left: 10px;
+	top: 30px;
+	content: ''; */
+	position: absolute;
+	display: inline-block;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #999;
+	border-bottom: 10px solid transparent;
+	left: 1px;
+	top: 30px;
+	content: '';
+}
+md-tooltip.customTooltip:after{
+	
+	/* position: absolute;
+	display: inline-block;
+	border-top: 9.5px solid transparent;
+	border-right: 9.5px solid #F7F8F9;
+	border-bottom: 9.5px solid transparent;
+	left: -8px;
+	top: 31px;
+	content: ''; */
+	
+	position: absolute;
+	display: inline-block;
+	border-top: 9.5px solid transparent;
+	border-right: 9.5px solid #F7F8F9;
+	border-bottom: 9.5px solid transparent;
+	left: 2px;
+	top: 31px;
+	content: '';
+	
+	
+}/* 
+md-tooltip.customTooltip:after{
+	
+	position: absolute;
+	display: inline-block;
+	border-top: 9.5px solid transparent;
+	border-right: 9.5px solid #F7F8F9;
+	border-bottom: 9.5px solid transparent;
+	
+	left: -8px;
+	top: 31px;
+	content: '';
+}
+ */ 
+ 
+ 
+ .errorBox .langselectbox{
+ 	border-color: #DD2C00;
+ }
+ .field_box{
+ 	margin: 10px 0;
+ }
+ 
+ .text_field{
+ 	font-family: 'BentonSans-Md';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    text-decoration: none;
+    color: #999999;
+ }
+ 
+ .error_box label{
+ 	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    color: #D0021B;
+ }
+ 
+ .amex_input_box.box_error{
+ 	border: 2px solid #D0021B;
+ }
+ 
+ .amex_input_box.box_error label{
+ 	color : #D0021B;
+ }
+ 
+ .amex_input_box.blue_focus{
+ 	border: 2px solid #1274b8;
+ }
+ .pass_section{
+ 	margin-top: 60px;
+ }
+ 
+ 
+ 
+ .selectBox{
+ 	padding: 18px 0px;
+    width: 380px;
+    position: relative;
+ }
+ .selectBox .showSelected{
+ 	padding: 0px 10px;
+ }
+ .selectBox .options{
+ 	display : none;
+ 	position: absolute; 
+ 	top: 38px;  
+ 	width: 100%;  
+ /* 	height: 50px;  */
+ 	border: 1px solid #CCC;
+ 	border-radius: 2px 2px 6px 6px;
+ 	background-color: #FFF; 
+ 	list-style-type: none;
+ }
+ .selectBox .options li{
+ 	padding: 10px;
+ 	margin-left: -35px;
+ }
+ 
+ 
+ /* ---------------- */
+ 
+ .field_box .sb-container {
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0;
+    position: relative;
+    text-align: left;
+    font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+	width: 400px;
+}
+ 
+ .field_box .sb-toggle {
+    border: 1px solid #ccc;
+    position: relative;
+    width: 400px;
+    /* padding: 20px 10px; */
+} 
+
+.field_box .sb-item a, .field_box .sb-toggle {
+    display: block;
+    background-color: #fff;
+    padding: 0 10px;
+    font-size: 1em;
+    color: #333;
+    height: 55px;
+    line-height: 55px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 6px;
+}
+ 
+/*  .field_box .sb-toggle:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #555;
+    
+    background-image: url("../images/arrows.png");
+} */
+
+.field_box .sb-toggle:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    background-image: url("../images/arrows.png");
+    background-repeat:no-repeat;
+    height: 11px;
+    width: 26px;
+}
+
+ 
+ .field_box .sb-dropdown {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 100;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    max-height: 120px;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+ 
+ /* .field_box .sb-item-focus a, .sb-item:hover a {
+    box-shadow: 0 0 0 1px #FFF inset;
+} */
+.field_box .sb-item:not(:last-child) {
+    border-bottom: none;
+}
+
+.field_box .sb-item-focus a, .field_box .sb-item:hover a {
+    box-shadow: none;/* 0 0 0 1px #ccc inset; */
+    background-color: rgba(244, 248, 252, 1);
+}
+
+.field_box .sb-dropdown .sb-item a, .field_box .sb-dropdown .sb-toggle{
+	line-height: 30px;
+	height: 30px;
+} 
+.reviewStyle{
+	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+   
+}
+
+.headinFont {
+	 font-size: 24px;
+}
+.recordMsg{
+	font-size: 16px;
+}
+.forgetInfo{
+	width : 80%;
+	margin-bottom: 20px;
+}
+
+.confrmingDetails{
+	font-family: 'BentonSans-Md';
+	font-style: normal;
+	font-size: 16px;
+		font-weight: 500;
+}
+.work-link{
+	padding-left: 10px;
+	color: #0066FF;
+	
+}
+.bottomspace{
+	margin-bottom: 100px;
+}
+.btn.countinuBtn{
+	width : 100px;
+}
+.rcdMsgSpace{
+	height: 26px;
+}
+.reviewDetails{
+	margin-bottom: 32px;
+}
+.atworkbtn{
+	width: 170px;
+}
+.msgbold{
+	font-weight: 700;
+}
+.reviewMsgDiv{
+	margin-bottom: 32px;
+}
+.reviewDetails div{
+	margin-bottom: 7px;
+}
+.recordDetails{
+	line-height: 1.5;
+    width: 622px;
+    margin-bottom: 32px;
+}
+.atworkbtn{
+	width: 150px;
+}
+.printImg{
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+}
+.secondStep{
+	margin-bottom: 30px;
+}
+.customTooltip.answerTooltip{
+	height: 150px;
+}
+.btn.needhelp{
+	width : 100px;
+	padding: 11px;
+}
+.btn.needhelp a{
+	text-decoration: none;
+	color: #1274B8;
+}
+#iNavNGI_Header .iNavShadow{
+	height: 0px;
+}
+#iNavNGI_Header #iNavHeaderCont{
+	width: 940px;
+	margin: 0px auto;
+}
+#iNavNGI_Header #iNavHeaderCont #iNavLogo{
+	padding: 18px 0 0 0;
+}
+
+#iNavNGI_FooterMain.iNNewFoot #iNavNGI_FooterWrap{
+	margin: 0px auto;
+	float: none;
+	min-width: 940px; 
+}
+
+#iNavNGI_FooterMain.iNNewFoot #iNavNGI_FooterCont {
+    margin: 0 auto;
+    padding: 0;
+    width: 940px;
+    display: table;
+    font-size: 16px!important;
+    float: none;
+}
+.field_box.dobfield .sb-container{
+	width:180px;
+}
+.dobSection .dobfield{
+	float: left;
+	margin-right: 45px;
+}
+.dobfield .amex_default.label{
+	margin-bottom: 10px;
+}
+
+.cusTooltip{
+	position: absolute;
+	display: none;
+	
+	line-height: 14px;
+ 	font-family: 'BentonSans-Bk';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10px;
+    padding-left: 10px;
+    color : #110808;
+
+    left:400px;
+    width: 350px;
+    top : -25px;
+}
+.cusTooltip div{
+	padding-left: 1em;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	background-color: #F7F8F9;
+    border: 1px solid #999999;
+	border-radius: 4px;
+	box-shadow: 1px 0px 0px #CCCCCC;
+	box-sizing: border-box;
+	
+}
+
+.cusTooltip:before{
+	
+	position: absolute;
+	display: inline-block;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #999;
+	border-bottom: 10px solid transparent;
+	left: 1px;
+	top: 25px;
+	content: '';
+}
+.cusTooltip:after{
+	
+	position: absolute;
+	display: inline-block;
+	border-top: 9.5px solid transparent;
+	border-right: 9.5px solid #F7F8F9;
+	border-bottom: 9.5px solid transparent;
+	left: 2px;
+	top: 26px;
+	content: '';
+	
+}
+
+@media only screen and (max-width : 780px) {
+  .cusTooltip{
+    width: 200px;
+   } 
+}
+
+.dobMonth.box_error .sb-toggle, .dobDate.box_error .sb-toggle{
+	border: 1px solid #D0021B;
+}
+
+

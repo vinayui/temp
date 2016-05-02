@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <script type="text/javascript">
+      angular.module('myApp', [])
+        .controller('DemoCtrl', function ($scope) {
+          
+          $scope.myOptions = [
+            {
+              name: 'option #1',
+              value: 0
+            },
+            {
+              name: 'option #2',
+              value: 1
+            }
+          ];
+          
+          //$scope.myValue = $scope.myOptions[0];
+          
+          $scope.submit = function () {
+            console.log($scope.form);
+          }
+          
+        })
+.directive('selectBox', function () {
+    return {
+        replace: true,
+        restrict: 'E',
+        scope: false,
+        template: function (element, attrs) {
+            if (!angular.isDefined(attrs.defaultLabel))
+                attrs.defaultLabel = "";
+
+            return '<div class="selectBox selector">'+
+                        '<span>{{ ngModel.name || "' + attrs.defaultLabel + '"}}</span>'+
+                        '<select name="' + attrs.name + '" ng-model="' + attrs.ngModel + '" ng-options="' + attrs.optexp + '"' + ((attrs.required) ? ' required' : '') + '></select>'+
+                   '</div>';
+        },
+        link: function (scope, el, attrs) {
+            scope.$watch(attrs.ngModel, function () {
+                var model = scope.$eval(attrs.ngModel);
+                //when value changes, update the selectBox text
+                if (angular.isDefined(model) && angular.isDefined(model.name)) {
+                    el[0].firstChild.innerText = model.name;
+                }
+            });
+        }
+    }
+  });
+    </script>
+  </head>
+
+  <body ng-app="myApp" ng-controller="DemoCtrl">
+  <form name="form" novalidate>
+    <select-box name="demo" ng-model="myValue" optExp="t.name for t in myOptions" required='true'></select-box>
+    <button ng-click="submit()">Submit</button>
+  </form>
+  </body>
+
+</html>

@@ -1,0 +1,84 @@
+@font-face {
+	font-family: 'BentonSans';
+	src:
+		url('https://www.aexp-static.com/nav/ngn/fonts/3be50273-0b2e-4aef-ae68-882eacd611f9-2.eot');
+	src: local('Benton Sans Regular'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/3be50273-0b2e-4aef-ae68-882eacd611f9-2.eot?')
+		format('embedded-opentype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/3be50273-0b2e-4aef-ae68-882eacd611f9-3.woff')
+		format('woff'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/3be50273-0b2e-4aef-ae68-882eacd611f9-1.ttf')
+		format('truetype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/3be50273-0b2e-4aef-ae68-882eacd611f9-4.svg#web')
+		format('svg');
+	font-style: normal;
+	font-weight: normal
+}
+
+@font-face {
+	font-family: 'BentonSans-Bd';
+	src:
+		url('https://www.aexp-static.com/nav/ngn/fonts/342cdec0-7d5d-43a9-84bf-8a77730526ee-2.eot');
+	src: local('Benton Sans Bold'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/342cdec0-7d5d-43a9-84bf-8a77730526ee-2.eot?')
+		format('embedded-opentype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/342cdec0-7d5d-43a9-84bf-8a77730526ee-3.woff')
+		format('woff'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/342cdec0-7d5d-43a9-84bf-8a77730526ee-1.ttf')
+		format('truetype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/342cdec0-7d5d-43a9-84bf-8a77730526ee-4.svg#web')
+		format('svg');
+	font-style: normal;
+	font-weight: bold
+}
+
+@font-face {
+	font-family: 'BentonSans-Bk';
+	src:
+		url('https://www.aexp-static.com/nav/ngn/fonts/325e6ad0-38fb-4bad-861c-d965eab101d5-2.eot');
+	src: local('Benton Sans Book'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/325e6ad0-38fb-4bad-861c-d965eab101d5-2.eot?')
+		format('embedded-opentype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/325e6ad0-38fb-4bad-861c-d965eab101d5-3.woff')
+		format('woff'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/325e6ad0-38fb-4bad-861c-d965eab101d5-1.ttf')
+		format('truetype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/325e6ad0-38fb-4bad-861c-d965eab101d5-4.svg#web')
+		format('svg');
+	font-style: normal;
+	font-weight: normal
+}
+
+@font-face {
+	font-family: 'BentonSans-Lt';
+	src:
+		url('https://www.aexp-static.com/nav/ngn/fonts/481b5db4-48a0-4c43-ae8b-fd1a0b7cb481-2.eot');
+	src: local('Benton Sans Light'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/481b5db4-48a0-4c43-ae8b-fd1a0b7cb481-2.eot?')
+		format('embedded-opentype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/481b5db4-48a0-4c43-ae8b-fd1a0b7cb481-3.woff')
+		format('woff'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/481b5db4-48a0-4c43-ae8b-fd1a0b7cb481-1.ttf')
+		format('truetype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/481b5db4-48a0-4c43-ae8b-fd1a0b7cb481-4.svg#web')
+		format('svg');
+	font-style: normal;
+	font-weight: normal
+}
+
+@font-face {
+	font-family: 'BentonSans-Md';
+	src:
+		url('https://www.aexp-static.com/nav/ngn/fonts/0fababca-4914-46dd-9b0f-efbd51f67ae8-2.eot');
+	src: local('Benton Sans Medium'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/0fababca-4914-46dd-9b0f-efbd51f67ae8-2.eot?')
+		format('embedded-opentype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/0fababca-4914-46dd-9b0f-efbd51f67ae8-3.woff')
+		format('woff'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/0fababca-4914-46dd-9b0f-efbd51f67ae8-1.ttf')
+		format('truetype'),
+		url('https://www.aexp-static.com/nav/ngn/fonts/0fababca-4914-46dd-9b0f-efbd51f67ae8-4.svg#web')
+		format('svg');
+	font-style: normal;
+	font-weight: bold
+}
