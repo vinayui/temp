@@ -1,0 +1,79 @@
+{
+	"success" : true,
+	"data" : {
+	"header": {
+		"correlationId": "CredentialTest"
+	},
+	"payload": {
+		"objective": {
+			"actions": [{
+				"name": "CheckCredentialCompliance",
+				"target": "MYCACredentials",
+				"namespace": "americanexpress.com"
+			}],
+			"outcomes": [{
+				"name": "CredentialSpec",
+				"target": "MYCACredentials",
+				"namespace": "americanexpress.com"
+			}],
+			"options": {
+				"partialFailureStrategy": "AllOrNothing"
+			}
+		},
+		"claimList": [{
+			"format": "json",
+			"claim": {
+				"type": "ApplicationID",
+				"signatureVer": "1",
+				"timestamp": 1432273972793,
+				"signature": "nWsdDluvRJ_hu4EVdo6bah0F-Ts",
+				"claimData": {
+					"keyList": ["ID"],
+					"valueList": []
+				}
+			}
+		}, {
+			"format": "json",
+			"claim": {
+				"issuerId": null,
+				"signatureVer": null,
+				"type": "MarketIdentifier",
+				"expiration": 0,
+				"timestamp": 0,
+				"signature": null,
+				"claimData": {
+					"keyList": [
+						"CountryCode",
+						"Language"
+					],
+					"valueList": [
+						"US",
+						"en"
+					]
+				}
+			}
+		}, {
+			"format": "json",
+			"claim": {
+				"issuerId": null,
+				"signatureVer": null,
+				"type": "CredentialData",
+				"expiration": 0,
+				"timestamp": 0,
+				"signature": null,
+				"claimData": {
+					"keyList": [
+						"UserID",
+						"Password",
+						"Question",
+						"Answer"
+					],
+					"valueList": [
+					]
+				}
+			}
+		}]
+	}
+}
+}
+
