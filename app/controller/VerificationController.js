@@ -6,7 +6,17 @@
 		//$scope.labelTxt = globalSrv.getValues();
 		$scope.steps = ['Verify', 'Create Profile', 'Welcome to @Work'];
 		$scope.contractError = "";
-		$scope.userDetails = {"contactId" : "", "dob":""};
+		$scope.userDetails = {"contactId" : "", "dobMonth":"","dobDate":""};
+		
+		$scope.contactDetails = {};		
+		registService.ajaxGet(serviceUrls.isContactID).then(function(responce){
+			if(responce.status == "SUCCESS"){
+				$scope.contactDetails = responce.data;
+			}else{
+				// Redirect to Error Page
+			}
+		});
+		
 		$scope.stepActive = 1;
 		$scope.saveNnext = function(){
 			if($scope.stepActive == 1)$scope.verifivation();
@@ -34,20 +44,41 @@
 				registService.ajaxPost(serviceUrls.postDetails,$scope.userResponce).then(function(responce){
 					if(responce.status == "FAILURE"){
 						//$scope.showError();
-						$scope.contractError = responce.errorList[0].description;
+						$scope.userIdError =responce.userIdErrorMessage;
+						$scope.PasswordError =responce.passwordErrorMessage;
+					
 					}else{
-						//$scope.stepActive++;
+						$scope.stepActive++;
 					}
-					$scope.stepActive++;
+					//$scope.stepActive++;
 					
 				});
 			}else{
 				$scope.showError();
 			}
 		};
+		$scope.accountLocked = 0;
 		$scope.verifivation = function(){
+			var dob = new Date($scope.contactDetails.dob);
 			if(!$scope.userDetails.contactId || $scope.dateSelected < 1 || $scope.monthSelected < 1){
 				$scope.showContractError();
+			}else if($scope.contactDetails.contactId != $scope.userDetails.contactId ||
+					dob.getMonth()+1 != $scope.userDetails.dobMonth ||
+					dob.getDate() != $scope.userDetails.dobDate){
+				$scope.accountLocked++ ;	
+				
+				$scope.showContractError();
+				$scope.contractError = $scope.labelTxt.AMEX_Contact_Error_Msg;
+				if($scope.accountLocked == 3)
+					$scope.contractError = $scope.labelTxt.AMEX_Contact_Locked_Error_Msg;
+				
+				registService.ajaxPost(serviceUrls.lockUser,'').then(function(responce){
+					if(responce.status == "SUCCESS"){
+						//$scope.showContractError();
+						//$scope.contractError = responce.data;
+					}
+				});
+				
 			}else{
 				registService.ajaxGet(serviceUrls.getUserDetails).then(function(responce){
 					if(!responce.success){
@@ -62,11 +93,12 @@
 		};
 		
 		$scope.showContractError = function(){
-			if(!$scope.userDetails.contactId)
+			var dob = new Date($scope.contactDetails.dob);
+			if(!$scope.userDetails.contactId || $scope.contactDetails.contactId != $scope.userDetails.contactId)
 				$('.contact_field.cont').addClass('box_error');
-			if($scope.dateSelected < 1)
+			if($scope.dateSelected < 1 || dob.getDate() != $scope.userDetails.dobDate)
 				$('.dobDate').addClass('box_error');
-			if($scope.monthSelected < 1)
+			if($scope.monthSelected < 1 || dob.getMonth()+1 != $scope.userDetails.dobMonth)
 				$('.dobMonth').addClass('box_error');
 		};
 		
@@ -98,9 +130,9 @@
 		               ];
 		$scope.questionsSelected = 0;		
 		
-		$scope.months = [{id:1, name:'Jan'}, {id:2, name:'Feb'}, {id:3, name:'Mar'},{id:4, name:'Apr'},
-			             {id:5, name:'May'},{id:6, name:'Jun'},{id:7, name:'Jul'},{id:8, name:'Aug'},
-			             {id:9, name:'Sep'},{id:10, name:'Oct'},{id:11, name:'Nov'},{id:12, name:'Dec'}];
+		$scope.months = [{id:1, name:'January'}, {id:2, name:'February'}, {id:3, name:'March'},{id:4, name:'April'},
+			             {id:5, name:'May'},{id:6, name:'June'},{id:7, name:'July'},{id:8, name:'August'},
+			             {id:9, name:'September'},{id:10, name:'October'},{id:11, name:'November'},{id:12, name:'December'}];
 		$scope.monthSelected = 0;
 		
 		$scope.dates = [];
@@ -108,10 +140,14 @@
 		
 		$scope.dobMonthChange = function(value){
 			$scope.monthSelected = value;
+			$scope.userDetails.dobMonth = value;
+			$scope.dateSelected = 0;
+			$scope.userDetails.dobDate = 0;
 			$('.dobMonth').removeClass('box_error');
 		};
 		$scope.dobDateChange = function(value){
 			$scope.dateSelected = value;
+			$scope.userDetails.dobDate = value;
 			$('.dobDate').removeClass('box_error');
 		}
 		

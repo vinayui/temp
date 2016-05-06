@@ -23,25 +23,25 @@
 					<div class="amex_input_box contact_field cont" ng-class="{box_error: user_focus}">
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMX_ContactId_Label}}</label>
-
+					        <!-- <input ng-model="userDetails.name" ng-focus="user_focus = false;" > -->
 					        <input ng-model="userDetails.contactId" on-focus-blur>
 					      </md-input-container>
 				      </div>
 				  </div>
 				
-				  <div class="dobSection">
+				  <div class="dobSection clear">
 				  	  <div class="amex_default label">Please select the day and month of your Birthday</div>
 				  	  <div class="field_box dobfield dobMonth">
-
+						<!-- div class="amex_default label">Month</div> -->
 					     <selectbox options="months" value="monthSelected" id-key="id" label-key="name" on-change="dobMonthChange(value)" title="Month"></selectbox>
 					  </div>
 					  <div class="field_box dobfield dobDate">
-
+						<!-- <div class="amex_default label">Date</div> -->
 					     <selectbox options="dates" value="dateSelected" id-key="id" label-key="name" on-change="dobDateChange(value)" title="Date"></selectbox>
 					  </div>
 				  </div>
 				  
-				  <div class="field_box error_box">
+				  <div class="field_box error_box clear">
 				  	<label >{{contractError}}</label>
 				  </div>
 				  <div style="height: 180px;"></div>
@@ -54,9 +54,13 @@
 					<div class="amex_input_box contact_field" ng-class="{box_error: user_focus}">
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMEX_Reg_User_ID}}</label>
-
+					        <!-- <input ng-model="userDetails.name" ng-focus="user_focus = false;" > -->
 					        <input ng-model="userDetails.userId" on-focus-blur on-mouse-hover >
-
+					       <!--  <md-tooltip md-direction="right" class="customTooltip">
+					            Your User ID should:</br>
+								*Contain 5 to 20 characters - at least one letter (not case sensitive).</br>
+								*Contain no spaces or special characters (e.g., &, >, *, $, @).</br>
+					        </md-tooltip> -->
 					        <div class="cusTooltip">
 					        	<div>
 					        	 Your User ID should:</br>
@@ -67,7 +71,9 @@
 					      </md-input-container>
 					      
 				      </div>
-				      
+					<div class="field_box error_box">
+						<label >{{userIdError}}</label>
+					</div>
 				  </div>
 				  <div class="field_box pass_section">
 					<div class="amex_default label">{{labelTxt.AMEX_Reg_Password_Label}}</div>
@@ -75,8 +81,14 @@
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMEX_Reg_Password}}</label>
 					        <input ng-model="userDetails.password" type="password" class="enterPass" on-focus-blur on-mouse-hover >
-
-					        <div class="cusTooltip">
+					       <!--  <md-tooltip md-direction="right" md-visible="confirmTooltip" class="customTooltip passwordTooltip">
+					            Your Password:</br>
+								*Must be different from your User ID.</br>
+								*Must contain 8 to 20 characters, including one letter and number.</br>
+								*May include the following characters: %,&, _, ?, #, =, -.</br>
+								*Your new password cannot have any spaces and will not be case sensitive
+					        </md-tooltip> -->
+					        <div class="cusTooltip passTooltip">
 					        	<div>
 					        	 Your Password:</br>
 								*Must be different from your User ID.</br>
@@ -86,7 +98,11 @@
 								</div>
 					      	</div>
 					      </md-input-container>
+
+
 				      </div>
+
+
 				  </div>
 				  
 				  <div class="field_box">
@@ -98,12 +114,26 @@
 					        type="password" on-focus-blur on-mouse-hover confirmPass="enterPass" >
 					      </md-input-container>
 				      </div>
+					  <div class="field_box error_box">
+						  <label >{{PasswordError}}</label>
+					  </div>
 				  </div>
 				  
 				  
 				  <div class="field_box pass_section">
 					<div class="amex_default label">{{labelTxt.AMEX_Reg_Security_Question}}</div>
-
+					<!-- <div class="amex_input_box selectBox" >
+						<label>Security Questions</label>
+						<div class="options">
+    						<div >My Name is Khan</div>
+    					</div>
+					</div> -->
+					<!-- <select-box></select-box> -->
+					<!-- <md-input-container class="langContainer">
+				        <md-select placeholder="Set Security Question" ng-model="userDetails.securityQuestion" class="langselectbox">
+			    			<md-option ng-repeat="question in questions" value="{{question.selValue}}">{{question.text}}</md-option>
+				        </md-select>
+				     </md-input-container> -->
 				     
 				     <selectbox options="questions" value="questionsSelected" id-key="id" label-key="name" on-change="change(value)" title="Set Security Question"></selectbox>
 				  </div>
@@ -131,12 +161,19 @@
 			  </div>
 			  
 			  <div ng-switch-when="3">
-
+			  	<!-- <h1 class="reviewStyle headinFont">{{labelTxt.AMEX_Reg_review_heading}}</h1>
+			  	<p class="reviewStyle recordMsg rcdMsgSpace">{{labelTxt.AMEX_Reg_review_record_message}}</p>
+			  	<p class="reviewStyle recordMsg forgetInfo">{{labelTxt.AMEX_Reg_review_forget_info}}</p> -->
+			  	
+			 	<!-- <p class="reviewStyle recordMsg bottomspace">{{labelTxt.AMEX_Reg_review_For_security_txt}}</p> -->
 			  	<div class="reviewMsgDiv">
 			  		<span class="reviewStyle recordMsg msgbold">{{labelTxt.AMEX_Reg_Welcome_at_work_heading}} </span>
 			  		<span class="reviewStyle recordMsg">{{labelTxt.AMEX_Reg_Completed}}</span>
 			  	</div>
-
+			  <!-- 	<div class="reviewDetails">
+			  		<div ><span class="reviewStyle recordMsg msgbold">{{labelTxt.AMEX_Reg_User_ID}}: </span><span class="reviewStyle recordMsg">{{userDetails.userId}}</span></div>
+			  		<div ><span class="reviewStyle recordMsg msgbold">{{labelTxt.AMEX_Reg_review_Security_Question}}: </span><span class="reviewStyle recordMsg">{{questions[userDetails.securityQuestion-1].name}}</span></div>
+			 	</div> -->
 			 	<div class="reviewDetails"> 
 			  		<div class="confrmingDetails">{{labelTxt.AMEX_Reg_User_ID}}: {{userDetails.userId}}</div>
 			  		<div class="confrmingDetails">{{labelTxt.AMEX_Reg_review_Security_Question}}: {{questions[userDetails.securityQuestion-1].name}}</div>
@@ -144,7 +181,8 @@
 			 	</div>
 			 	<div class="recordDetails">
 			 		<span class="reviewStyle recordMsg">{{labelTxt.AMEX_REg_record_Details_msg}}</span>
-
+			 		<!-- <span class="reviewStyle recordMsg msgbold">Contact ID {{userDetails.contactId}}</span> -->
+			 		<!-- <span class="reviewStyle recordMsg">{{labelTxt.AMEX_REg_record_Details_msg_2}}</span> -->
 			 	</div>
 			 	
 			 	<div class="reviewStyle recordMsg bottomspace">
@@ -152,23 +190,34 @@
 			 	</div>
 			  </div>
 			  
-
+			 <!--  <div ng-switch-when="4">
+			  	<h1 class="reviewStyle headinFont">{{labelTxt.AMEX_Reg_Welcome_at_work_heading}}</h1>
+			  	<p class="reviewStyle recordMsg">{{labelTxt.AMEX_Reg_Welcome_enrollment_txt}}</p>
+			  	<p class="reviewStyle recordMsg forgetInfo">
+			  		{{labelTxt.AMEX_Reg_Welcome_save_before_txt}} {{userDetails.contactId}}. {{labelTxt.AMEX_Reg_Welcome_save_after_txt}}
+			  	</p>
 			  
-		      <div class="field_box error_box">
+			 	<p class="reviewStyle recordMsg bottomspace">
+			 		<span>{{labelTxt.AMEX_Reg_Welcome_save_at_work}}:</span><span class="work-link">{{labelTxt.AMEX_Reg_Welcome_save_at_work_link}}</span>
+			 	</p>
+			  </div> -->
+			  
+		      <!-- <div class="field_box error_box">
 		  		<label >{{contractError}}</label>
-			  </div>
+			  </div> -->
 		      
 		</div>
 		<div class="buttonSelction">
 			<div class="left width20"></div>
 			<div class="right width80">
-
+				<!-- <div class="btn cancel_btn" style="display: none;"> {{labelTxt.AMEX_Reg_Cancel_btn}} </div> -->
 				<div class="btn cancel_btn needhelp" ng-show="stepActive == 2"><a  target="_blank" href="https://google.com">Need Help?</a></div>
 				<div class="btn save_btn" ng-click="saveNnext();" ng-show="stepActive < 3"> {{labelTxt.AMEX_Reg_Save_btn}}</div>
 				
 				<div class="btn cancel_btn countinuBtn" ng-click="print();" ng-show="stepActive == 3"><img class="printImg" src="/WS/AMEX/images/print.png"/>{{labelTxt.AMEX_Reg_Print_btn}} </div>
 				<div class="btn save_btn atworkbtn" ng-click="saveNnext();" ng-show="stepActive == 3"> {{labelTxt.AMEX_Reg_Enter_btn}}</div>
-
+				<!-- <div class="btn save_btn atworkbtn" ng-click="saveNnext();" ng-show="stepActive > 3"> {{labelTxt.AMEX_Reg_Enter_btn}}</div> -->
+				
 			</div>
 		</div>
 		<div class="tooltipFocus" isFocus="NO"></div>

@@ -1,0 +1,5 @@
+{
+"status":"FAILURE",
+"userIdErrorMessage":"User name must not contain special Characters",
+"passwordErrorMessage":"password must contain special characters"
+}

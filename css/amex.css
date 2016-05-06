@@ -215,6 +215,10 @@ md-select.md-default-theme ._md-select-value, md-select ._md-select-value
   
  }
  
+ .clear{
+ 	clear: both;
+ }
+ 
  md-tooltip.customTooltip ._md-content, md-tooltip.customTooltip .md-content{
  	height: 65px;
  	line-height: 14px;
@@ -643,6 +647,17 @@ md-tooltip.customTooltip:after{
 	content: '';
 	
 }
+
+.cusTooltip.passTooltip{
+	 top : -57px;
+}
+.cusTooltip.passTooltip:before{
+	top: 45px;
+}
+.cusTooltip.passTooltip:after{
+	 top : 46px;
+}
+
 
 @media only screen and (max-width : 780px) {
   .cusTooltip{

@@ -35,7 +35,8 @@
 		"AMEX_Reg_Welcome_save_at_work_link" : "www.americanexpress.com/corporate",
 		"AMEX_Reg_Completed" : "You have successfully completed your @ Work Registration",
 		"AMEX_REg_record_Details_msg" : "Please record your UserID & Security Question. If you forgot your password you would require this information to validate your identity to instantly reset your password. Also, Please save your",
-		"AMEX_REg_record_Details_msg_2" : "as would require your Contact ID in case you need assistance form our customer service professionals."
-		
+		"AMEX_REg_record_Details_msg_2" : "as would require your Contact ID in case you need assistance form our customer service professionals.",
+		"AMEX_Contact_Error_Msg" : "Contact Id and DOB are not maching",
+		"AMEX_Contact_Locked_Error_Msg" : "Your Account is locaked"
 	}
 }
