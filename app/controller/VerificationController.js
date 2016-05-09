@@ -28,7 +28,7 @@
 			var userDet = $scope.userDetails;
 			if(userDet.userId && userDet.password 
 					&& userDet.confirmPassword && userDet.securityQuestion 
-						&& userDet.answer){
+						&& $scope.answerIsValid ){
 				
 				//$scope.userResponce.
 				var list = $scope.userResponce.payload.claimList;
@@ -44,9 +44,7 @@
 				registService.ajaxPost(serviceUrls.postDetails,$scope.userResponce).then(function(responce){
 					if(responce.status == "FAILURE"){
 						//$scope.showError();
-						$scope.userIdError =responce.userIdErrorMessage;
-						$scope.PasswordError =responce.passwordErrorMessage;
-					
+						$scope.answerError = responce.userIdErrorMessage+', '+responce.passwordErrorMessage;
 					}else{
 						$scope.stepActive++;
 					}
@@ -54,7 +52,7 @@
 					
 				});
 			}else{
-				$scope.showError();
+				$scope.showUserError();
 			}
 		};
 		$scope.accountLocked = 0;
@@ -102,9 +100,18 @@
 				$('.dobMonth').addClass('box_error');
 		};
 		
-		$scope.showError = function(){
-			$('.contact_field').addClass('box_error');
-			$('.emp_field').addClass('box_error');
+		$scope.showUserError = function(){
+			
+			var userDet = $scope.userDetails;
+			if(!userDet.userId)
+				$('.usid').addClass('box_error');
+			if(!userDet.password)
+				$('.pass_fld').addClass('box_error');
+			if(!userDet.confirmPassword)
+				$('.con_pass_fld').addClass('box_error');
+			if(!$scope.answerIsValid)
+				$('.ans_fld').addClass('box_error');
+			
 		};
 		
 		$scope.print = function(){
@@ -130,20 +137,26 @@
 		               ];
 		$scope.questionsSelected = 0;		
 		
+		$scope.monthSelected = 0;
 		$scope.months = [{id:1, name:'January'}, {id:2, name:'February'}, {id:3, name:'March'},{id:4, name:'April'},
 			             {id:5, name:'May'},{id:6, name:'June'},{id:7, name:'July'},{id:8, name:'August'},
 			             {id:9, name:'September'},{id:10, name:'October'},{id:11, name:'November'},{id:12, name:'December'}];
-		$scope.monthSelected = 0;
 		
 		$scope.dates = [];
 		$scope.dateSelected = 0;
 		
+		
 		$scope.dobMonthChange = function(value){
 			$scope.monthSelected = value;
 			$scope.userDetails.dobMonth = value;
+			
 			$scope.dateSelected = 0;
 			$scope.userDetails.dobDate = 0;
+			
+			//$('.dobDate').find('.sb-toggle').html("Date");		
+			
 			$('.dobMonth').removeClass('box_error');
+			
 		};
 		$scope.dobDateChange = function(value){
 			$scope.dateSelected = value;
@@ -166,15 +179,20 @@
 		$scope.change = function(value) {
 			$scope.userDetails['securityQuestion'] = value;
 		}
-		
+		$scope.answerIsValid = false;
 		$scope.$watch('userDetails.answer',function(value){
-			var msg = "";
-			if(value && (value.length < 2 || value.length > 32)){
-				msg = "Must contain 2 to 32 characters";
-			}else if(value && !/^[A-z0-9]+$/.test(value)){
-				msg = "Should not include any special characters: %,&,@,* _, ?, #, =, -.";
+			if(value != undefined){
+				var msg = "";
+				$scope.answerIsValid = false;
+				if(value && (value.length < 2 || value.length > 32)){
+					msg = "Must contain 2 to 32 characters";
+				}else if(value && !/^[A-z0-9]+$/.test(value)){
+					msg = "Should not include any special characters: %,&,@,* _, ?, #, =, -.";
+				}else{
+					$scope.answerIsValid = true;
+				}
+				$scope.answerError = msg;
 			}
-			$scope.answerError = msg;
 		});
 		
 	}]);

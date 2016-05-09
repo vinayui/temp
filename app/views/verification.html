@@ -29,11 +29,11 @@
 				      </div>
 				  </div>
 				
-				  <div class="dobSection clear">
+				  <div class="dobSection clear" >
 				  	  <div class="amex_default label">Please select the day and month of your Birthday</div>
 				  	  <div class="field_box dobfield dobMonth">
 						<!-- div class="amex_default label">Month</div> -->
-					     <selectbox options="months" value="monthSelected" id-key="id" label-key="name" on-change="dobMonthChange(value)" title="Month"></selectbox>
+					     <selectbox options="months" value="monthSelected" id-key="id" label-key="name" on-change="dobMonthChange(value)" title="Month" ></selectbox>
 					  </div>
 					  <div class="field_box dobfield dobDate">
 						<!-- <div class="amex_default label">Date</div> -->
@@ -51,7 +51,7 @@
 		      <div ng-switch-when="2">
 				<div class="field_box secondStep">
 					<div class="amex_default label">{{labelTxt.AMEX_Reg_User_ID_Label}}</div>
-					<div class="amex_input_box contact_field" ng-class="{box_error: user_focus}">
+					<div class="amex_input_box contact_field usid" ng-class="{box_error: user_focus}">
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMEX_Reg_User_ID}}</label>
 					        <!-- <input ng-model="userDetails.name" ng-focus="user_focus = false;" > -->
@@ -71,13 +71,11 @@
 					      </md-input-container>
 					      
 				      </div>
-					<div class="field_box error_box">
-						<label >{{userIdError}}</label>
-					</div>
+				      
 				  </div>
 				  <div class="field_box pass_section">
 					<div class="amex_default label">{{labelTxt.AMEX_Reg_Password_Label}}</div>
-					<div class="amex_input_box emp_field" ng-class="{box_error: emp_focus}">
+					<div class="amex_input_box emp_field pass_fld" ng-class="{box_error: emp_focus}">
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMEX_Reg_Password}}</label>
 					        <input ng-model="userDetails.password" type="password" class="enterPass" on-focus-blur on-mouse-hover >
@@ -98,48 +96,28 @@
 								</div>
 					      	</div>
 					      </md-input-container>
-
-
 				      </div>
-
-
 				  </div>
 				  
 				  <div class="field_box">
 					<!-- <div class="amex_default label">{{labelTxt.AMEX_Reg_Password_Label}}</div> -->
-					<div class="amex_input_box emp_field" ng-class="{box_error: emp_focus}">
+					<div class="amex_input_box emp_field con_pass_fld" ng-class="{box_error: emp_focus}">
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMEX_Reg_Confirm_Password}}</label>
 					        <input ng-model="userDetails.confirmPassword" 
 					        type="password" on-focus-blur on-mouse-hover confirmPass="enterPass" >
 					      </md-input-container>
 				      </div>
-					  <div class="field_box error_box">
-						  <label >{{PasswordError}}</label>
-					  </div>
 				  </div>
 				  
 				  
 				  <div class="field_box pass_section">
 					<div class="amex_default label">{{labelTxt.AMEX_Reg_Security_Question}}</div>
-					<!-- <div class="amex_input_box selectBox" >
-						<label>Security Questions</label>
-						<div class="options">
-    						<div >My Name is Khan</div>
-    					</div>
-					</div> -->
-					<!-- <select-box></select-box> -->
-					<!-- <md-input-container class="langContainer">
-				        <md-select placeholder="Set Security Question" ng-model="userDetails.securityQuestion" class="langselectbox">
-			    			<md-option ng-repeat="question in questions" value="{{question.selValue}}">{{question.text}}</md-option>
-				        </md-select>
-				     </md-input-container> -->
-				     
 				     <selectbox options="questions" value="questionsSelected" id-key="id" label-key="name" on-change="change(value)" title="Set Security Question"></selectbox>
 				  </div>
 				  
 				  <div class="field_box">
-					<div class="amex_input_box emp_field" ng-class="{box_error: emp_focus}">
+					<div class="amex_input_box emp_field ans_fld" ng-class="{box_error: emp_focus}">
 						<md-input-container class="amex_input_field">
 					        <label class="text_field">{{labelTxt.AMX_Answer_Security_Question}}</label>
 					        <input ng-model="userDetails.answer" on-focus-blur on-mouse-hover>
@@ -189,27 +167,12 @@
 			 		<span>{{labelTxt.AMEX_Reg_Welcome_save_at_work}} </span><span class="work-link">{{labelTxt.AMEX_Reg_Welcome_save_at_work_link}}</span>
 			 	</div>
 			  </div>
-			  
-			 <!--  <div ng-switch-when="4">
-			  	<h1 class="reviewStyle headinFont">{{labelTxt.AMEX_Reg_Welcome_at_work_heading}}</h1>
-			  	<p class="reviewStyle recordMsg">{{labelTxt.AMEX_Reg_Welcome_enrollment_txt}}</p>
-			  	<p class="reviewStyle recordMsg forgetInfo">
-			  		{{labelTxt.AMEX_Reg_Welcome_save_before_txt}} {{userDetails.contactId}}. {{labelTxt.AMEX_Reg_Welcome_save_after_txt}}
-			  	</p>
-			  
-			 	<p class="reviewStyle recordMsg bottomspace">
-			 		<span>{{labelTxt.AMEX_Reg_Welcome_save_at_work}}:</span><span class="work-link">{{labelTxt.AMEX_Reg_Welcome_save_at_work_link}}</span>
-			 	</p>
-			  </div> -->
-			  
-		      <!-- <div class="field_box error_box">
-		  		<label >{{contractError}}</label>
-			  </div> -->
 		      
 		</div>
 		<div class="buttonSelction">
-			<div class="left width20"></div>
-			<div class="right width80">
+			<!-- <div class="left width20"></div> -->
+			<!-- <div class="right width80"> -->
+			<div class="btns_list" ng-class="{btn300Width: stepActive == 1, btn400Width: stepActive > 1 }">
 				<!-- <div class="btn cancel_btn" style="display: none;"> {{labelTxt.AMEX_Reg_Cancel_btn}} </div> -->
 				<div class="btn cancel_btn needhelp" ng-show="stepActive == 2"><a  target="_blank" href="https://google.com">Need Help?</a></div>
 				<div class="btn save_btn" ng-click="saveNnext();" ng-show="stepActive < 3"> {{labelTxt.AMEX_Reg_Save_btn}}</div>

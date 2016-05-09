@@ -669,4 +669,12 @@ md-tooltip.customTooltip:after{
 	border: 1px solid #D0021B;
 }
 
-
+.btns_list{
+	margin: 0px auto;
+}
+.btn300Width{
+	width: 300px;
+}
+.btn400Width{
+	width: 400px;
+}
